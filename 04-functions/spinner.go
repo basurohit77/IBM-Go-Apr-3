@@ -17,6 +17,7 @@ func main() {
 
 }
 
+// A spinner is also a closure with return of more than one inner function, both the inner function use and process the variable of outer function.
 func getSpinner() (increment func() int, decrement func() int) {
 	counter := 0
 	increment = func() int {
