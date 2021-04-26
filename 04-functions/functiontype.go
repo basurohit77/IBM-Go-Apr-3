@@ -13,9 +13,11 @@ var greet func(string, string) string = func(firstname, lastname string) string 
 
 func main() {
 
-	/* greet := func(firstname, lastname string) string {
+	
+        // Function on variable
+        greet := func(firstname, lastname string) string {
 		return fmt.Sprintf("Hi %s %s, Have a nice day!", firstname, lastname)
-	} */
+	} 
 
 	var firstname, lastname string
 	fmt.Println("Enter the first name :")
@@ -24,7 +26,7 @@ func main() {
 	fmt.Println("Enter the last name :")
 	fmt.Scanf("%s", &lastname)
 
-	greetMsg := greet(firstname, lastname)
+	greetMsg := greet(firstname, lastname) //Use the variable
 	fmt.Println(greetMsg)
 
 	//fmt.Println(getRand(200))
@@ -33,16 +35,12 @@ func main() {
 }
 
 /*
+// Normal function
 func greet(firstname string, lastname string) string {
 	return fmt.Sprintf("Hi %s %s, Have a nice day!", firstname, lastname)
 }
 */
 
-/*
-func getRand(limit int) (int, int) {
-	return rand.Intn(limit), rand.Intn(limit)
-}
-*/
 
 func getRand(limit int) (rand1 int, rand2 int) {
 	rand1 = rand.Intn(limit)
