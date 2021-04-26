@@ -10,6 +10,7 @@ func main() {
 	fmt.Println(adderFor100(300))
 }
 
+//Functions can be returned as return values from other functions
 func getAdder() func(int, int) int {
 	return func(i1, i2 int) int {
 		return i1 + i2
