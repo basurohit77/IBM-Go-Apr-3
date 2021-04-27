@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	operations := map[int]func(int, int) int{
+	operations := map[int]func(int, int) int{ // Here key is int, value is func() with int return type
 		1: add,
 		2: subtract,
 		3: multiply,
@@ -17,14 +17,17 @@ func main() {
 		}
 		n1, n2 := getOperands()
 		result := operation(n1, n2)
-		fmt.Printf("Result = %d\n", result)
+		fmt.Printf("Result = %d \n", result)
 	}
 }
 
-func log(n1, n2 int, operation func(int, int) int) int {
+/*
+func log(n1, n2 	int, operation func(int, int) int) int {
 	fmt.Printf("Processing %d and %d\n", n1, n2)
 	return operation(n1, n2)
 }
+
+ */
 
 func add(n1, n2 int) int {
 	return n1 + n2

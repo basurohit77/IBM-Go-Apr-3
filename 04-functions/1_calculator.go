@@ -27,7 +27,7 @@ func main() {
 }
 
 func log(n1, n2 int, operation func(int, int) int) int {
-	fmt.Printf("Processing %d and %d\n", n1, n2)
+	fmt.Printf("Processing %d and %d \n", n1, n2)
 	return operation(n1, n2)
 }
 
