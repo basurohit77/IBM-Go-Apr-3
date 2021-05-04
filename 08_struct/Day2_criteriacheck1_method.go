@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 type Product struct {
 	id       int
@@ -36,6 +39,20 @@ func main() {
 	fmt.Println("Initial list of products")
 	//Print(products)
 	products.Print()
+
+	sortProductCriteria := func(p1 *Product, p2 *Product, item string) bool {
+		switch item {
+		case "name":
+			if p1.name > p2.name {
+				p1.name, p2.name = p2.name, p1.name
+			}
+		case "cost":
+			if p1.cost > p2.cost {
+				p1.cost, p2.cost = p2.cost, p1.cost
+		}
+	}
+
+	products.sortMe(sortProductCriteria)
 
 	stationaryProductCriteria := func(product Product) bool {
 		return product.category == "stationary"
@@ -114,3 +131,7 @@ func (products Products) Filter(criteria func(Product) bool) Products {
 	}
 	return result
 }
+
+func (products Products) sortMe(criteria func(*Product, *Product, string) bool) bool {
+
+	}
